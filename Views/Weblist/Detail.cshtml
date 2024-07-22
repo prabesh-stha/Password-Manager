@@ -1,0 +1,84 @@
+@model WebList
+<div class="d-flex justify-content-center align-items-center ">
+<div class="p-3 rounded shadow" style="width: 500px; height:50vh;">
+        <div class="header">
+            <h1 class="mb-3 text-center fs-5 text-dark font-monospace">@Model.Name</h1>
+        </div>
+        <div class="mb-3">
+            <div class="mb-3">
+                <label asp-for="Title">URL/Phone</label>
+                <div class="input-group">
+                    <input type="text" id="username" value="@Model.Title" readonly>
+                    <button class="copy-btn" onclick="copyToClipboard('username')">📋</button>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <input type="password" id="password" value="@Model.Password" readonly>
+                    <button class="view-btn" onclick="togglePasswordVisibility()">👁️</button>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Note"></label>
+                <div class="input-group">
+                    <input type="text" value="@Model.Note" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+            <a asp-controller="Weblist" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary">Edit</a>
+            <a asp-controller="Weblist" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">Delete</a>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var viewButton = document.querySelector('.view-btn');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                viewButton.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                viewButton.textContent = '👁️';
+            }
+        }
+
+        function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId);
+            copyText.select();
+            document.execCommand("copy");
+        }
+    </script>
+
+<style>
+.input-group input {
+     background-color: rgb(201, 201, 201);
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-group button {
+    padding: 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #555555;
+}
+
+.field input[readonly] {
+    background-color: #333333;
+}
+
+
+
+
+</style>
