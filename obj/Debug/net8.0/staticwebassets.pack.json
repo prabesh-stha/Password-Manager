@@ -249,14 +249,6 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
-      "Id": "/Users/mac/Desktop/PasswordManager/wwwroot/userImage/0b690ffc-7dc1-4db3-bfbf-a285871ad402_cr.jpg",
-      "PackagePath": "staticwebassets/userImage/0b690ffc-7dc1-4db3-bfbf-a285871ad402_cr.jpg"
-    },
-    {
-      "Id": "/Users/mac/Desktop/PasswordManager/wwwroot/userImage/0e14db64-c202-497f-b8fa-c6a84d19a5dc_justin.jpg",
-      "PackagePath": "staticwebassets/userImage/0e14db64-c202-497f-b8fa-c6a84d19a5dc_justin.jpg"
-    },
-    {
       "Id": "/Users/mac/Desktop/PasswordManager/wwwroot/userImage/default.jpg",
       "PackagePath": "staticwebassets/userImage/default.jpg"
     },
